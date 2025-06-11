@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificador Huffman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylehuffman.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-code"></i> Codificador Huffman</h1>
+            <p>Comprime texto usando el algoritmo de codificación Huffman</p>
+        </header>
+
+        <div class="input-section">
+            <div class="form-group">
+                <label for="input-text">Ingresa el texto a codificar:</label>
+                <textarea id="input-text" rows="5" placeholder="Escribe o pega tu texto aquí..."></textarea>
+            </div>
+            <button id="encode-btn" class="btn">
+                <i class="fas fa-lock"></i> Codificar
+            </button>
+        </div>
+
+        <div class="results-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="output">Resultado</button>
+                <button class="tab-btn" data-tab="codes">Tabla de Códigos</button>
+                <button class="tab-btn" data-tab="tree">Árbol Huffman</button>
+                <button class="tab-btn" data-tab="stats">Estadísticas</button>
+                <button class="tab-btn" data-tab="process">Proceso</button>
+            </div>
+
+            <div class="tab-content active" id="output">
+                <h3>Texto Codificado</h3>
+                <div class="output-box" id="encoded-output"></div>
+                <div class="copy-btn-container">
+                    <button id="copy-btn" class="btn small">
+                        <i class="fas fa-copy"></i> Copiar
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="codes">
+                <h3>Tabla de Códigos Huffman</h3>
+                <div class="table-container">
+                    <table id="codes-table">
+                        <thead>
+                            <tr>
+                                <th>Carácter</th>
+                                <th>Frecuencia</th>
+                                <th>Código</th>
+                                <th>Longitud</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tree">
+                <h3>Árbol de Huffman</h3>
+                <div class="tree-container" id="tree-visualization"></div>
+            </div>
+
+            <div class="tab-content" id="stats">
+                <h3>Estadísticas de Compresión</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="original-size">0</div>
+                        <div class="stat-label">Bits originales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="compressed-size">0</div>
+                        <div class="stat-label">Bits comprimidos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="compression-ratio">0</div>
+                        <div class="stat-label">Ratio de compresión</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="savings">0%</div>
+                        <div class="stat-label">Ahorro</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="compression-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="tab-content" id="process">
+                <h3>Proceso de Codificación</h3>
+                <div class="process-steps" id="process-steps"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/scripthuffman.js') }}"></script>
+</body>
+</html>
