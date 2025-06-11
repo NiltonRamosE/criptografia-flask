@@ -32,13 +32,11 @@ Ambos integrados en una interfaz web accesible y fácil de usar.
 - **Python 3.13+**: Lenguaje principal para la lógica de los algoritmos.  
 - **Flask 2.0+**: Framework para crear la aplicación web y manejar rutas.  
 - **Bibliotecas clave**:  
-  - `bitarray` (para manipulación de bits en Huffman)  
   - `pycryptodome` (opcional, para funciones criptográficas auxiliares en DES)  
 
 ### Frontend  
 - **HTML5/CSS3**: Estructura y diseño de las interfaces.  
 - **JavaScript**: Interactividad en los formularios y visualizaciones.  
-- **Bootstrap 5** (opcional): Para estilos responsivos si se utiliza.  
 
 ### Desarrollo  
 - **Git**: Control de versiones.  
