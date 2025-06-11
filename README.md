@@ -1,6 +1,6 @@
 # Proyecto de Criptografía y Compresión: DES + Huffman  
 
-![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.13%2B-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.0%2B-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -18,12 +18,31 @@ Herramienta web que integra **cifrado DES** (seguridad) y **codificación Huffma
 
 ---
 
-## 🛠️ Tecnologías  
-- **Backend**:  
-  - Python 3.13+
-  - Flask (para la interfaz web)  
-- **Frontend**:  
-  - HTML/CSS/JavaScript  
+## 🎯 Objetivo  
+Este proyecto busca implementar dos algoritmos fundamentales en el procesamiento de datos:  
+- **DES (Data Encryption Standard)**: Para garantizar confidencialidad en la transmisión de información.  
+- **Codificación Huffman**: Para compresión eficiente de datos sin pérdida.  
+
+Ambos integrados en una interfaz web accesible y fácil de usar.
+
+---
+
+## 🛠️ Tecnologías y Herramientas  
+### Backend  
+- **Python 3.13+**: Lenguaje principal para la lógica de los algoritmos.  
+- **Flask 2.0+**: Framework para crear la aplicación web y manejar rutas.  
+- **Bibliotecas clave**:  
+  - `bitarray` (para manipulación de bits en Huffman)  
+  - `pycryptodome` (opcional, para funciones criptográficas auxiliares en DES)  
+
+### Frontend  
+- **HTML5/CSS3**: Estructura y diseño de las interfaces.  
+- **JavaScript**: Interactividad en los formularios y visualizaciones.  
+- **Bootstrap 5** (opcional): Para estilos responsivos si se utiliza.  
+
+### Desarrollo  
+- **Git**: Control de versiones.  
+- **Visual Studio Code**: Editor principal.  
 
 ---
 
@@ -32,18 +51,19 @@ Herramienta web que integra **cifrado DES** (seguridad) y **codificación Huffma
 .
 ├── CRIPTOGRAFIA/
 │   ├── cifrado_des/          # Módulo DES
-│   │   ├── DES.py            # Lógica del cifrado
-│   │   └── templates/        # HTML para DES
+│   │   ├── DES.py            # Lógica del cifrado (permutaciones, subclaves, etc.)
+│   │   └── templates/        # HTML específico para DES
 │   │
 │   └── codificador_huffman/  # Módulo Huffman
-│       ├── huffman.py        # Algoritmo de compresión
+│       ├── huffman.py        # Construcción de árbol y codificación/decodificación
 │       └── templates/        # HTML para Huffman
 │
-├── static/                   # Assets (CSS/JS)
-│   ├── css/                  # Estilos
-│   └── js/                   # Scripts interactivos
+├── static/                   # Assets
+│   ├── css/                  # Estilos generales y específicos
+│   ├── js/                   # Scripts para interacción
+│   └── images/               # Capturas de pantalla/iconos
 │
-├── templates/                # Páginas base
-│   └── index.html            # Página de inicio
+├── templates/                # Plantillas base
+│   └── index.html            # Página de inicio con navegación
 │
-└── app.py                    # Aplicación principal
+└── app.py                    # Punto de entrada de la aplicación Flask
